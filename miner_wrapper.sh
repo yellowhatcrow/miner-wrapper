@@ -86,6 +86,14 @@ kill_miner(){
         fi
         }
 
+help_meu(){
+	printf "\033[36mMiner Wrapper\033[0m\n"
+	printf "\033[35mStart Miner\033[0m\t\033[32m[ -s, -start ]\033[0m\n"
+	printf "\033[35mKill Miner\033[0m\t\033[32m[ -k, -kill ]\033[0m\n"
+	printf "\033[35mView Config\033[0m\t\033[32m[ -v, -view ]\033[0m\n"
+	printf "\033[35mHelp Menu\033[0m\t\033[32m[ -h, -help ]\033[0m\n"
+	}
+
 case $option in
         -s|-start)
                 if [ ! -f $pid_file ];
@@ -117,5 +125,6 @@ case $option in
 	printf "\033[35mAPI Bind:\033[0m\t\033[32m$__api_bind\033[0m\n"
 	;;
         -k|-kill) kill_miner;;
+	-h|-help) help_menu;;
         *) printf "Err: \033[31mMissing or invalid parameter was given!\033[0m\n";;
 esac
